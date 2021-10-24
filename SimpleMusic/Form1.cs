@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SimpleMusic
 {
@@ -16,7 +17,8 @@ namespace SimpleMusic
         {
             InitializeComponent();
             //default volume
-            track_volume.Value = 50;
+            track_volume.Value = 5;
+            lbl_volume.Text = "50%";
 
         }
 
@@ -30,6 +32,17 @@ namespace SimpleMusic
         {
             player.URL = paths[track_list.SelectedIndex];
             player.Ctlcontrols.play();
+            try
+            {
+                var file = TagLib.File.Create(paths[track_list.SelectedIndex]);
+                var bin = (byte[])(file.Tag.Picture[0].Data.Data);
+                pic_art.Image = Image.FromStream(new MemoryStream(bin));
+
+            }
+            catch
+            {
+
+            }
         }
 
         private void btn_stop_Click(object sender, EventArgs e)
@@ -87,6 +100,13 @@ namespace SimpleMusic
         {
             //volume
             player.settings.volume = track_volume.Value;
+            lbl_volume.Text = track_volume.Value.ToString() + "%";
+        }
+
+        private void p_bar_MouseDown(object sender, MouseEventArgs e)
+        {
+            //progress bar click
+            player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / p_bar.Width;
         }
 
         private void btn_open_Click(object sender, EventArgs e)
