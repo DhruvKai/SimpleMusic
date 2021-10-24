@@ -15,6 +15,9 @@ namespace SimpleMusic
         public Form1()
         {
             InitializeComponent();
+            //default volume
+            track_volume.Value = 50;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -64,9 +67,26 @@ namespace SimpleMusic
         {
             if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
             {
+                //progress bar
                 p_bar.Maximum = (int)player.Ctlcontrols.currentItem.duration;
                 p_bar.Value=(int)player.Ctlcontrols.currentPosition;
+            try
+            {
+                //timmer
+                lbl_track_start.Text = player.Ctlcontrols.currentPositionString;
+                lbl_track_end.Text = player.Ctlcontrols.currentItem.durationString.ToString();
             }
+            catch
+            {
+
+            }
+            }
+        }
+
+        private void track_volume_Scroll(object sender, EventArgs e)
+        {
+            //volume
+            player.settings.volume = track_volume.Value;
         }
 
         private void btn_open_Click(object sender, EventArgs e)

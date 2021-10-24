@@ -167,6 +167,7 @@ namespace SimpleMusic
             this.track_volume.Size = new System.Drawing.Size(56, 139);
             this.track_volume.TabIndex = 10;
             this.track_volume.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.track_volume.Scroll += new System.EventHandler(this.track_volume_Scroll);
             // 
             // label1
             // 
