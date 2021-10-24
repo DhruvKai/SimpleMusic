@@ -29,6 +29,7 @@ namespace SimpleMusic
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn_preview = new System.Windows.Forms.Button();
             this.btn_Next = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@ namespace SimpleMusic
             this.lbl_track_end = new System.Windows.Forms.Label();
             this.lbl_track_start = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pic_art)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).BeginInit();
@@ -58,8 +60,9 @@ namespace SimpleMusic
             this.btn_preview.Name = "btn_preview";
             this.btn_preview.Size = new System.Drawing.Size(92, 34);
             this.btn_preview.TabIndex = 0;
-            this.btn_preview.Text = "Preview";
+            this.btn_preview.Text = "Previous";
             this.btn_preview.UseVisualStyleBackColor = true;
+            this.btn_preview.Click += new System.EventHandler(this.btn_preview_Click);
             // 
             // btn_Next
             // 
@@ -70,6 +73,7 @@ namespace SimpleMusic
             this.btn_Next.TabIndex = 1;
             this.btn_Next.Text = "Next";
             this.btn_Next.UseVisualStyleBackColor = true;
+            this.btn_Next.Click += new System.EventHandler(this.btn_Next_Click);
             // 
             // btn_play
             // 
@@ -80,6 +84,7 @@ namespace SimpleMusic
             this.btn_play.TabIndex = 2;
             this.btn_play.Text = "Play";
             this.btn_play.UseVisualStyleBackColor = true;
+            this.btn_play.Click += new System.EventHandler(this.btn_play_Click);
             // 
             // btn_pause
             // 
@@ -90,6 +95,7 @@ namespace SimpleMusic
             this.btn_pause.TabIndex = 3;
             this.btn_pause.Text = "Pause";
             this.btn_pause.UseVisualStyleBackColor = true;
+            this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
             // 
             // btn_stop
             // 
@@ -100,6 +106,7 @@ namespace SimpleMusic
             this.btn_stop.TabIndex = 4;
             this.btn_stop.Text = "Stop";
             this.btn_stop.UseVisualStyleBackColor = true;
+            this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
             // 
             // btn_open
             // 
@@ -122,13 +129,15 @@ namespace SimpleMusic
             // track_list
             // 
             this.track_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.track_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.track_list.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.track_list.FormattingEnabled = true;
             this.track_list.ItemHeight = 16;
             this.track_list.Location = new System.Drawing.Point(295, 118);
             this.track_list.Name = "track_list";
-            this.track_list.Size = new System.Drawing.Size(390, 164);
+            this.track_list.Size = new System.Drawing.Size(390, 160);
             this.track_list.TabIndex = 7;
+            this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
             // 
             // pic_art
             // 
@@ -203,6 +212,11 @@ namespace SimpleMusic
             this.panel1.Size = new System.Drawing.Size(758, 192);
             this.panel1.TabIndex = 15;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,6 +268,7 @@ namespace SimpleMusic
         private System.Windows.Forms.Label lbl_track_end;
         private System.Windows.Forms.Label lbl_track_start;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
