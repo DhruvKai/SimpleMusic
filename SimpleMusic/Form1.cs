@@ -35,7 +35,7 @@ namespace SimpleMusic
             try
             {
                 var file = TagLib.File.Create(paths[track_list.SelectedIndex]);
-                var bin = (byte[])(file.Tag.Picture[0].Data.Data);
+                var bin = (byte[])(file.Tag.Pictures[0].Data.Data);
                 pic_art.Image = Image.FromStream(new MemoryStream(bin));
 
             }
@@ -53,6 +53,8 @@ namespace SimpleMusic
         private void btn_pause_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.pause();
+            p_bar.Value = 0;
+
         }
 
         private void btn_play_Click(object sender, EventArgs e)
