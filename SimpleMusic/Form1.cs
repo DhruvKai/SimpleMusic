@@ -35,6 +35,7 @@ namespace SimpleMusic
                 for (int x = 0; x<files.Length; x++)
                 {
                     track_list.Items.Add(files[x]);
+
                 }
 
             }
