@@ -51,6 +51,7 @@ namespace SimpleMusic
             ((System.ComponentModel.ISupportInitialize)(this.pic_art)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_preview
@@ -131,7 +132,7 @@ namespace SimpleMusic
             // 
             this.track_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.track_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.track_list.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.track_list.ForeColor = System.Drawing.Color.White;
             this.track_list.FormattingEnabled = true;
             this.track_list.ItemHeight = 16;
             this.track_list.Location = new System.Drawing.Point(295, 118);
@@ -162,7 +163,8 @@ namespace SimpleMusic
             // 
             // track_volume
             // 
-            this.track_volume.Location = new System.Drawing.Point(691, 143);
+            this.track_volume.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.track_volume.Location = new System.Drawing.Point(690, 28);
             this.track_volume.Name = "track_volume";
             this.track_volume.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.track_volume.Size = new System.Drawing.Size(56, 139);
@@ -173,7 +175,7 @@ namespace SimpleMusic
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(694, 279);
+            this.label1.Location = new System.Drawing.Point(693, 170);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 11;
@@ -191,24 +193,30 @@ namespace SimpleMusic
             // lbl_track_end
             // 
             this.lbl_track_end.AutoSize = true;
+            this.lbl_track_end.Font = new System.Drawing.Font("Gobold Extra1", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_track_end.ForeColor = System.Drawing.SystemColors.Desktop;
             this.lbl_track_end.Location = new System.Drawing.Point(632, 81);
             this.lbl_track_end.Name = "lbl_track_end";
-            this.lbl_track_end.Size = new System.Drawing.Size(44, 17);
+            this.lbl_track_end.Size = new System.Drawing.Size(40, 18);
             this.lbl_track_end.TabIndex = 13;
             this.lbl_track_end.Text = "00:00";
             // 
             // lbl_track_start
             // 
             this.lbl_track_start.AutoSize = true;
+            this.lbl_track_start.Font = new System.Drawing.Font("Gobold Extra2", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_track_start.ForeColor = System.Drawing.SystemColors.Desktop;
             this.lbl_track_start.Location = new System.Drawing.Point(24, 81);
             this.lbl_track_start.Name = "lbl_track_start";
-            this.lbl_track_start.Size = new System.Drawing.Size(44, 17);
+            this.lbl_track_start.Size = new System.Drawing.Size(40, 18);
             this.lbl_track_start.TabIndex = 14;
             this.lbl_track_start.Text = "00:00";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.track_volume);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 101);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(758, 192);
@@ -227,8 +235,6 @@ namespace SimpleMusic
             this.Controls.Add(this.lbl_track_start);
             this.Controls.Add(this.lbl_track_end);
             this.Controls.Add(this.lbl_volume);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.track_volume);
             this.Controls.Add(this.player);
             this.Controls.Add(this.pic_art);
             this.Controls.Add(this.track_list);
@@ -240,6 +246,8 @@ namespace SimpleMusic
             this.Controls.Add(this.btn_Next);
             this.Controls.Add(this.btn_preview);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Muic Player";
@@ -247,6 +255,8 @@ namespace SimpleMusic
             ((System.ComponentModel.ISupportInitialize)(this.pic_art)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
