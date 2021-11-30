@@ -114,7 +114,7 @@ namespace SimpleMusic
             this.btn_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_open.Location = new System.Drawing.Point(454, 337);
             this.btn_open.Name = "btn_open";
-            this.btn_open.Size = new System.Drawing.Size(249, 34);
+            this.btn_open.Size = new System.Drawing.Size(292, 34);
             this.btn_open.TabIndex = 5;
             this.btn_open.Text = "open";
             this.btn_open.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@ namespace SimpleMusic
             // 
             this.p_bar.Location = new System.Drawing.Point(16, 299);
             this.p_bar.Name = "p_bar";
-            this.p_bar.Size = new System.Drawing.Size(687, 23);
+            this.p_bar.Size = new System.Drawing.Size(730, 23);
             this.p_bar.TabIndex = 6;
             this.p_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.p_bar_MouseDown);
             // 
@@ -246,6 +246,7 @@ namespace SimpleMusic
             this.Controls.Add(this.btn_Next);
             this.Controls.Add(this.btn_preview);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

@@ -18,7 +18,7 @@ namespace SimpleMusic
             InitializeComponent();
             //default volume
             track_volume.Value = 5;
-            lbl_volume.Text = "50%";
+            //lbl_volume.Text = "50%";
 
         }
 
