@@ -17,8 +17,8 @@ namespace SimpleMusic
         {
             InitializeComponent();
             //default volume
-            track_volume.Value = 5;
-            //lbl_volume.Text = "50%";
+            track_volume.Value = 0;
+            lbl_volume.Text = "0%";
 
         }
 
@@ -102,7 +102,7 @@ namespace SimpleMusic
         {
             //volume
             player.settings.volume = track_volume.Value;
-            lbl_volume.Text = track_volume.Value.ToString() + "%";
+            lbl_volume.Text = track_volume.Value.ToString() + "0%";
         }
 
         private void p_bar_MouseDown(object sender, MouseEventArgs e)
